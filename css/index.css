@@ -5768,6 +5768,8 @@ h1 {
   width: 216px;
   position: absolute;
   background-size: 100%;
+  left: 0;
+  transition: left 1s;
 }
 .cards-wrapper .card.hearts-1 {
   background-image: url("../assets/cards/hearts-1.svg");
@@ -5925,14 +5927,54 @@ h1 {
 .cards-wrapper .card.spades-13 {
   background-image: url("../assets/cards/spades-13.svg");
 }
+.cards-wrapper .card .visual-card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0;
+  border-radius: 12px;
+}
+.cards-wrapper .card .visual-card.color-red {
+  color: red;
+}
+.cards-wrapper .card .visual-card .visual-side {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+.cards-wrapper .card .visual-card .visual-side .visual-value, .cards-wrapper .card .visual-card .visual-side .visual-suit {
+  height: 22px;
+}
+.cards-wrapper .card .visual-card .rotated {
+  transform: rotateZ(180deg);
+}
+.cards-wrapper .card .visual-card .visual-center {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 45px;
+}
 .cards-wrapper .card:hover {
   z-index: 50;
+}
+.cards-wrapper.only-css .visual-card {
+  opacity: 1;
 }
 .cards-wrapper.hidden .card {
   background: #00d4ff;
   background: radial-gradient(circle, #00d4ff 0%, #090979 65%, #020024 97%);
   border: 1px solid;
   border-radius: 10px;
+}
+.cards-wrapper.hidden .visual-card {
+  opacity: 0;
 }
 
 .body-bg {
